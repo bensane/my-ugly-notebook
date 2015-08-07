@@ -1,0 +1,33 @@
+
+
+li{
+  list-style: none;
+}
+
+body{
+  background-color: #B6B6B6;
+}
+
+.notebook-card-square.mdl-card {
+  margin-bottom: 20px;
+  width: 100%;
+  background: #fafafa;
+}
+.notebook-card-square > .mdl-card__title {
+  color: #fff;
+}
+
+.page-color-0{
+    background-color: #46B6AC;
+}
+.page-color-1{
+  background-color: red;
+}
+
+.page-color-2{
+  background-color: blue;
+}
+
+.page-color-3{
+  background-color: green;
+}
