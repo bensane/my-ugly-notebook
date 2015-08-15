@@ -1,0 +1,92 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--6-col">
+
+    <div class="mdl-card mdl-shadow--2dp notebook-card">
+      <div class="mdl-card__title" style="background-color:#E91E63;">
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            {{input value=name class="mdl-textfield__input" type="text" id="name"}}
+            <label class="mdl-textfield__label" for="name">Name...</label>
+          </div>
+        </form>
+      </div>
+      <div class="mdl-card__supporting-text" style="min-height: 200px;">
+
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
+
+            <form>
+              <div class="mdl-textfield mdl-js-textfield textfield-demo">
+                {{textarea value=description class="mdl-textfield__input" type="text" rows= "3" id="content"}}
+                <label class="mdl-textfield__label" for="sample5">Description...</label>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <button {{action 'add'}} class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Add
+        </button>
+      </div>
+      <div class="mdl-card__menu">
+
+      </div>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--6-col">
+    {{outlet}}
+  </div>
+</div>
+
+<style>
+  .notebook-card.mdl-card {
+    width: 100%;
+  }
+  .notebook-card > .mdl-card__title {
+    color: #fff;
+    height: 100px;
+    background: url('../assets/demos/welcome_card.jpg') center / cover;
+  }
+  .notebook-card > .mdl-card__menu {
+    color: #fff;
+  }
+
+
+  .page-card-square{
+    margin-bottom: 25px;
+  }
+
+  .page-card-square.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: #C2185B;
+  }
+
+  .page-card-square > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .page-card-square > .mdl-card__title {
+    align-items: flex-start;
+  }
+  .page-card-square > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .page-card-square > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .page-card-square > .mdl-card__title,
+  .page-card-square > .mdl-card__actions,
+  .page-card-square > .mdl-card__actions > .mdl-button {
+    color: #fff;
+  }
+
+  .mdl-button--fab{
+    background-color: #448AFF;
+  }
+
+</style>

@@ -1,0 +1,102 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--6-col">
+
+    <div class="mdl-card mdl-shadow--2dp notebook-card">
+      <div class="mdl-card__title" style="background-color:#E91E63;">
+        <h2 class="mdl-card__title-text">{{model.name}}</h2>
+      </div>
+      <div class="mdl-card__supporting-text" style="min-height: 200px;">
+
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
+            <p>{{model.description}}</p>
+            {{#each model.pages as |page|}}
+
+                <div class="mdl-card mdl-shadow--2dp page-card-square">
+                  <div class="mdl-card__title mdl-card--expand">
+                    <h4>
+                      {{page.name}}
+                    </h4>
+                  </div>
+                  <div class="mdl-card__actions mdl-card--border">
+                    {{#link-to 'notebooks.notebook.page' page class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"}}
+                      Read Page
+                    {{/link-to}}
+                    <div class="mdl-layout-spacer"></div>
+                    {{material-design-icon name='chat'}}
+                  </div>
+                </div>
+
+            {{/each}}
+          </div>
+        </div>
+
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        {{#link-to 'notebooks.edit' model class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"}}
+          Edit Notebook
+        {{/link-to}}
+      </div>
+      <div class="mdl-card__menu">
+        {{#link-to 'notebooks.notebook.add'}}
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            {{material-design-icon name='material-design-icon'}}
+          </button>
+        {{/link-to}}
+      </div>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--6-col">
+    {{outlet}}
+  </div>
+</div>
+
+<style>
+  .notebook-card.mdl-card {
+    width: 100%;
+  }
+  .notebook-card > .mdl-card__title {
+    color: #fff;
+    height: 100px;
+    background: url('../assets/demos/welcome_card.jpg') center / cover;
+  }
+  .notebook-card > .mdl-card__menu {
+    color: #fff;
+  }
+
+
+  .page-card-square{
+    margin-bottom: 25px;
+  }
+
+  .page-card-square.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: #C2185B;
+  }
+
+  .page-card-square > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .page-card-square > .mdl-card__title {
+    align-items: flex-start;
+  }
+  .page-card-square > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .page-card-square > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .page-card-square > .mdl-card__title,
+  .page-card-square > .mdl-card__actions,
+  .page-card-square > .mdl-card__actions > .mdl-button {
+    color: #fff;
+  }
+
+  .mdl-button--fab{
+    background-color: #448AFF;
+  }
+
+</style>

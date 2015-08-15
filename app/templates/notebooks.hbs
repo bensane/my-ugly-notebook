@@ -1,0 +1,30 @@
+<!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--overlay-drawer-button">
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">{{#link-to 'notebooks'}}My Notebook{{/link-to}}</span>
+    <nav class="mdl-navigation">
+      {{#each model as |notebook|}}
+          {{#link-to 'notebooks.notebook' notebook class="mdl-navigation__link"}}
+            <div class="mdl-badge" data-badge="{{unbound notebook.pages.length}}">{{notebook.name}}</div>
+          {{/link-to}}
+      {{/each}}
+        {{#link-to 'notebooks.add' class="add-notebook mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"}}
+          Create Notebook
+        {{/link-to}}
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      {{outlet}}
+    </div>
+  </main>
+</div>
+
+<<style>
+  .add-notebook.mdl-button{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
